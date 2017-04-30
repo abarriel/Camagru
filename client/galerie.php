@@ -4,13 +4,15 @@ if (!$_SESSION['loggued_on_user'])
 	header("Location: ../index.php");
 include("header.php");
 // include("../back/image.php");
-include ('../config/account.php');
+// include ('../config/account.php');
 include("../back/error_account.php");
 // echo '<script>alert("'.$_SESSION['ok'].'")</script>';
 ?>
 <div class="full_page">
 	<!-- <div class="webcam"> -->
-	<?php include("photos.php") ?>
+	<div class="galerie" id="galerie">
+		<h2>Galerie</h2>
+	</div>
 	<div class="capture">
 		<div class="button_snap">
 			<h2> Take a Picture!</h2>
@@ -31,14 +33,14 @@ include("../back/error_account.php");
 			<canvas id="canvasUpload"></canvas>
 			<canvas id="canvas"></canvas>
 		</div>
-			<input  type="submit" name="submit" value="Save!" id="save" class="button"/>
+		<input  type="submit" name="submit" value="Save!" id="save" class="button"/>
 	</div>
 	
-	<h2>Select Filter! or <span id="selectBackground" onclick="selectBackground()">Background</span></h2>
+	<h2>Select Filter! or <span id="selectBackground" >Background</span></h2>
 	<div id="filter">
 	</div> </div>
-<script type="text/javascript" src="../js/ajax.js"></script>
-<script type="text/javascript" src="../js/webcam.js"></script>
-<script type="text/javascript" src="../js/camera.js"></script>
-<script type="text/javascript" src="../js/mouse.js"></script>
-<script type="text/javascript" src="../js/galerie.js"></script>
+	<script type="text/javascript" src="../js/ajax.js"></script>
+	<script type="text/javascript" src="../js/webcam.js"></script>
+	<script type="text/javascript" src="../js/camera.js"></script>
+	<script type="text/javascript" src="../js/mouse.js"></script>
+	<script type="text/javascript" src="../js/galerie.js"></script>

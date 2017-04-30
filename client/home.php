@@ -19,7 +19,7 @@ echo '<div class="container_home" value="password" id="password_container">
 </div>';
 echo '<div class="container_home" value="button" id="button_container"> <input type="submit" value="Enjoy!" class="button" onclick="change_account()"></input></div>';
 ?>
-
+<!-- <script type="text/javascript" sr></script> -->
 <script type="text/javascript" src="../js/ajax.js"></script>
 <script type="text/javascript" src="../js/parse_register.js"></script>
 <script type="text/javascript" src="../js/home.js"></script>

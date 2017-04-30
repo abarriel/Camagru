@@ -1,7 +1,7 @@
 <?
 session_start();
 $path = "../data/image/";
-// include('../config/account.php');
+include('../config/account.php');
 include("../config/user.php");
 if ($_POST['getCollage'] !== "yes")
 	return ;

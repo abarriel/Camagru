@@ -1,5 +1,5 @@
 <?php	
-include('connect_db.php');
+// include('connect_db.php');
 session_start();
 class user{
 	private $login;
@@ -31,6 +31,18 @@ class user{
 			));
 	}
 
+	public function getCollage(){
+		$stmt = $this->db_con->prepare("SELECT * FROM data");
+		$val = $stmt->execute();
+		$imgs = [];
+		while ($data = $stmt->fetch())
+		{
+			$imgs[] = $data['picture'];
+			// $ok .= $data['picture'];
+			// $ok .= "\n";
+		}
+		return $imgs;
+	}
 	public function __destruct(){}
 }
 ?>

@@ -36,6 +36,7 @@ document.onreadystatechange = () => {
 			elm.src = "../data/"+index+".png";  
 			filter.appendChild(elm);
 		});
+		printCollage();
 	}
 }
 
@@ -62,7 +63,7 @@ function uploadFile(evt){
 			var ctx = canvasUpload.getContext("2d");
 			ctx.drawImage(viewUpload, 0, 0, width, height);
 			var dataurl = canvasUpload.toDataURL("image/png");
-			console.log(dataurl);
+			// console.log(dataurl);
 			viewUpload.src = dataurl;
 		};
 	}
