@@ -1,0 +1,74 @@
+.full_page{
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+}
+.webcam{
+	position: absolute;
+	background-color: brown;
+	/*margin-top: 100px;*/
+	width: 60%;
+	height: 90%;
+	text-align: center;
+	margin: auto;
+}
+.capture{
+	float:right;
+	position: relative;
+	background-color: yellow;
+	/*margin-top: 100px;*/
+	width: 70%;
+	height: 100%;
+}
+
+.filter{
+	float:left;
+	position: relative;
+	background-color: green;
+	/*margin-top: 100px;*/
+	text-align: center;
+
+	width: 30%;
+	height: 100%;
+}
+.img_filter{
+	width: 150px;
+}
+#video{
+	/*position: absolute;*/
+	float:left;
+	height: 480px;
+	/*z-index: 2;*/
+	width:  640px;
+	background-color: purple;
+	z-index: 1;
+}
+.galerie{
+	position: relative;
+	float: right;
+	text-align: center;
+	width: 40%;
+	background-color: pink;
+	height: 100%;
+}
+.superpose_capture{
+
+	margin:auto;
+	float: left;
+	position: absolute;
+	height: 480px;
+	z-index: 2;
+	width:  640px;
+	background-image: url('../data/1.png');
+}
+.button_snap{
+	position: relative;
+	background-color: red;
+}
+.context_video{
+	margin:auto;
+	margin-top: 10px;
+	height: 80%;
+	background-color: black;
+	width: 640px;
+}
