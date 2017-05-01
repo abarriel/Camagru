@@ -31,7 +31,9 @@ class account{
 		{
 			$_SESSION['error'] = 2;
 			header("Location: ../index.php");
+			return 1;
 		}
+		return 0;
 	}
 
 	public function ifEmailTaken(){

@@ -1,0 +1,46 @@
+body{
+	/*overflow-y:scroll*/
+	margin:auto;
+}
+#myalbum{
+	margin: auto;
+	/*position: absolute;*/
+	overflow-y: scroll;
+	/*height: 100%;*/
+	/*overflow:scroll;*/
+	/*overflow-y: hidden;*/
+	/*white-space:nowrap; */
+	/*display:block;*/
+	/*background-color: red; */
+	width: 1970px;
+	height: 100%;
+	/*width: 90%;*/
+	/*overflow-x: scroll;*/
+	/*overflow: scroll;*/
+	/*overflow-y: ;*/
+}
+#myalbum img:hover {
+	/*visibility: visible;*/
+	  opacity: 0.3;
+	  content: "This is some text";
+	/*margin:auto;*/
+	/*margin-left: auto;*/
+	/*margin-right: auto;*/
+	/*display: block;*/
+}
+.textHover {
+    display:none;
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0; left:0;
+    text-align:center;
+    color:white;
+}
+.imgContain {
+    position:relative;
+    display:table;
+}
+.imgContain:hover .textHover {
+    display:block;
+}
