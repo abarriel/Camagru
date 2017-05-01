@@ -14,23 +14,26 @@ date_default_timezone_set('CET');
 	<link rel="stylesheet" type="text/css" href="../css/webcam.css">
 	<title>Camagru</title>
 </head>
-	<header>
+<header>
+	<div class="menu_text">
+		<a href="galerie.php" class="text_header" >Accueil</a>
+		<a href="albums.php" class="text_header" >Galerie</a>
+		<a href="home.php" class="text_header" >Home</a>
+		<a href="logout.php" class="text_header" >Logout</a>
+	</div>
+	<div class="menu_text" style="background-color: rgb(255,252,0); width: 100%">
 		<div class="menu_text">
-			<a href="galerie.php" class="text_header" >Accueil</a>
-			<a href="../index.php" class="text_header" >Galerie</a>
-			<a href="home.php" class="text_header" >Home</a>
-			<a href="logout.php" class="text_header" >Logout</a>
-		</div>
-		<div class="menu_text" style="background-color: rgb(255,252,0); width: 100%">
-			<div class="menu_text">
-				<?php
+			<?php
+			if( $_SERVER['REQUEST_URI'] === "/camagru/client/home.php")
+			{
 				echo '<a href="#" class="text_header" name="email" style="font-size:small" onclick="elm_visible(this)">Change Mail</a>';
 				echo '<a href="#" class="text_header" name="password" style="font-size:small"  onclick="elm_visible(this)" >Change Password</a>';
 				echo '<a href="#" class="text_header" name="bio" style="font-size:small"  onclick="elm_visible(this)" >Change Bio</a>';
 				echo'<a href="#" class="text_header" name="delete" style="font-size:small" onclick="delete_account()">Delete</a>';
-				?>
-			</div>
+			}
+			?>
 		</div>
+	</div>
 </header> 
 <body>
-<script type="text/javascript" src="../js/home.js"></script>
+	<script type="text/javascript" src="../js/home.js"></script>

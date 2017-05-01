@@ -1,3 +1,11 @@
 #save {
 	display: none; 
 }
+body{
+	height: 1500px;
+}
+#galerie{
+	overflow: auto;
+	/*background-color: red; */
+	height:  1100px;
+}

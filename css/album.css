@@ -1,0 +1,21 @@
+body{
+	/*overflow-y:scroll*/
+}
+#album{
+	margin: auto;
+	/*position: absolute;*/
+	overflow-y: scroll;
+	/*height: 100%;*/
+	/*overflow:scroll;*/
+	/*overflow-y: hidden;*/
+	white-space:nowrap; 
+	/*display:block;*/
+	/*background*/-color: red; 
+	width: 1970px;
+	height: 500px;
+
+	/*overflow-x: scroll;*/
+	/*overflow: scroll;*/
+	/*overflow-y: ;*/
+
+}

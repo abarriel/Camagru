@@ -16,6 +16,5 @@ $user = New user(array(
 	"picture" => $collage,
 	));
 $user->addCollage();
-
-echo $_SESSION['saveCollage'];
+echo $collage_path;
 ?>
