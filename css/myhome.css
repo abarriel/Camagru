@@ -21,26 +21,48 @@ body{
 }
 #myalbum img:hover {
 	/*visibility: visible;*/
-	  opacity: 0.3;
-	  content: "This is some text";
+	opacity: 0.3;
+	content: "This is some text";
 	/*margin:auto;*/
 	/*margin-left: auto;*/
 	/*margin-right: auto;*/
 	/*display: block;*/
 }
-.textHover {
-    display:none;
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0; left:0;
-    text-align:center;
-    color:white;
+.collagediv{
+	display : "interval";
+	margin-left : "10px";
+	margin-top : "10px";
 }
-.imgContain {
-    position:relative;
-    display:table;
+
+#container {
+	position: relative;
+	display:inline-block;
+	width: 640px;
+	height: 480px;
+	border: 1px solid black;
 }
-.imgContain:hover .textHover {
-    display:block;
+#container img {
+	width: 100%;
+}
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 450px;
+	width: 680px;
+	text-align: center;
+	opacity: 0;
+	display: table;
+}
+#overlay:hover {
+	background: black;
+	opacity: 0.5;
+	color: white;
+}
+#myrow {
+	display: table-row;
+}
+#mycell {
+	display: table-cell;
+	vertical-align: middle;
 }

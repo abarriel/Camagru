@@ -1,5 +1,5 @@
 var album = document.getElementById('myalbum');
-var collageDiv = document.getElementById('collagediv');
+var collageDiv = document.getElementsByClassName('collagediv');
 var collages = 0;
 var newCollages = 0;
 var imgContain = 0;
@@ -8,12 +8,7 @@ var textHover = 0;
 document.onreadystatechange = () => {
 	if (document.readyState === "complete")
 		{
-			imgContain = document.createElement("div");
-			imgContain.className = "imgContain";
-			textHover = document.createElement("div");
-			textHover.className = "textHover";
-			// textHover.content = 'My text here'
-			textHover.innerHTML = "my TEXT HERE";
+		
 			console.log("log");
 			printCollage();
 		}
@@ -31,19 +26,11 @@ function printCollage(){
 			collages = JSON.parse(xhr.responseText).slice(0);
 			newCollages = JSON.parse(xhr.responseText).slice(4);
 			collages.forEach(function(element, index) {
-			// var divClone = imgContain.cloneNode(true);
-			// var textClone = textHover.cloneNode(true);
-			// album.appendChild(divClone);
-			// divClone.appendChild(textClone);
 			elm = document.createElement("img");
-			album.appendChild(elm);
-			elm.id = "collagediv";
-			elm.style.display = "interval";
-			elm.style.marginLeft = "10px";
-			elm.style.marginTop = "10px";
+			elm.className = "collagediv";
 			elm.src = "../data/image/"+element+".png";  
-			collageDiv = elm;
-			// divClone.appendChild(elm);
+			// collageDiv = elm;
+			album.appendChild(elm);
 			});
 		}
 	};

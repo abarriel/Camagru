@@ -2,8 +2,8 @@
 session_start();
 function connect_db()
 {
-	// $db = new PDO('mysql:host=localhost', 'root', 'root');
-	// $db->exec('CREATE DATABASE IF NOT EXISTS CAMA_TEST');
+	$db = new PDO('mysql:host=localhost', 'root', 'root');
+	$db->exec('CREATE DATABASE IF NOT EXISTS CAMA_TEST');
 	$db_host = "localhost";
 	$db_name = "CAMA_TEST";
 	$db_user = "root";
