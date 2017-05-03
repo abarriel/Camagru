@@ -47,7 +47,6 @@ function printCollage(){
 			collages.forEach(function(element, index) {
 			elm = document.createElement("img");
 			elm.className = "collagediv";
-
 			elm.src = "../data/image/"+element+".png";  
 			// collageDiv = elm;
 			mycell.innerHTML = "&hearts; 72k &#9658; 25 555";
@@ -59,9 +58,9 @@ function printCollage(){
 	};
 }
 
-const start = 602;
-var img = 650;
-var imgCount = 0;
+// const start = 602;
+// var img = 650;
+// var imgCount = 0;
 // album.addEventListener('scroll', function (event) {
 	// if (document.body.scrollHeight == 
  //        document.body.scrollTop +        

@@ -43,6 +43,23 @@ class user{
 		}
 		return $imgs;
 	}
+	public function addLike(){
+		$stmt = $this->db_con->prepare("UPDATE data SET likes = likes + 1 WHERE picture=:picture");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture,
+			));
+		return ($data['likes']);
+	}
+
+	public function unLike(){
+		$stmt = $this->db_con->prepare("UPDATE data SET likes = likes - 1 WHERE picture=:picture AND likes >= 0");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture,
+			// "likes" => $data
+			));
+		return ($data['likes']);
+	}
+
 	public function __destruct(){}
 }
 ?>

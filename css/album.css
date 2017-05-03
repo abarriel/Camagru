@@ -12,8 +12,8 @@ body{
 	/*white-space:nowrap; */
 	/*display:block;*/
 	/*background-color: red; */
-	width: 80%;
-	max-width: 2000px;
+	width: 85%;
+	max-width: 2050px;
 /*	width: 1970px;*/
 	height: 1000px;
 
@@ -48,17 +48,20 @@ body{
 	position: absolute;
 	top: 10px;
 	left: 10px;
-	height: 480px;
-	width: 650px;
+	height: 20px;
+	/*z-index: -999;*/
+	width: 20px;
 	text-align: center;
 	opacity: 0;
 	display: table;
 }
+
 #overlay:hover {
-	background: black;
-	opacity: 0.5;
-	color: white;
+	/*background: black;*/
+	/*opacity: 1;*/
+	/*color: white;*/
 }
+
 #myrow {
 	display: table-row;
 }
