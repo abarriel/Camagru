@@ -5,16 +5,16 @@ body{
 #myalbum{
 	margin: auto;
 	/*position: absolute;*/
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	/*height: 100%;*/
 	/*overflow:scroll;*/
 	/*overflow-y: hidden;*/
 	/*white-space:nowrap; */
 	/*display:block;*/
 	/*background-color: red; */
-	width: auto;
-	height: 100%;
-	/*width: 90%;*/
+	/*width: auto;*/
+	/*height: 50%;*/
+	width: 55%;
 	/*overflow-x: scroll;*/
 	/*overflow: scroll;*/
 	/*overflow-y: ;*/
@@ -50,7 +50,7 @@ width: 440px;
 }
 #overlay:hover {
 	background: black;
-	opacity: 0.5;
+	opacity: 0.7;
 	color: white;
 }
 #myrow {

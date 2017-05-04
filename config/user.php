@@ -43,6 +43,20 @@ class user{
 		return $imgs;
 	}
 
+	public function getCollageUser($login){
+		$stmt = $this->db_con->prepare("SELECT picture, likes FROM data WHERE login=:login");
+		$val = $stmt->execute(array(
+			"login" => $login
+			));
+		while($data = $stmt->fetch())
+		{
+			$collage[] = $data['picture'];
+			$likes[] = $data['likes'];
+		}
+		$imgs = array_combine($collage, $likes);
+		return $imgs;
+	}
+
 	public function getLiker()
 	{
 		$stmt = $this->db_con->prepare("SELECT liker FROM data WHERE picture=:picture");

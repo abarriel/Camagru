@@ -33,7 +33,7 @@ function printCollage(){
 	var xhr = getXMLHttpRequest();
 	xhr.open("POST", "../back/photos.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	xhr.send(null);
+	xhr.send("action=all");
 	console.log("printCollage");
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))

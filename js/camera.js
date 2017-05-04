@@ -100,12 +100,7 @@ function stop()
 {
   canvasUpload.style.display = "none";
   canvas.style.display = "none";
-  // on_elm.style.display = "block";
-  // hideUpload.style.display = "none";
-  // video.style.display = "block";
   viewUpload.src = "";
-  // hideUpload.style.display = "none";
-  // canvas.style.visibility = "hidden";
   var myButton = document.getElementById('buttonStop');
   if (myButton) myButton.disabled = true;
   myButton = document.getElementById('buttonSnap');
@@ -140,7 +135,7 @@ function gotStream(stream)
   var myButton = document.getElementById('buttonStart');
   if (myButton) myButton.disabled = true;
   videoStream = stream;
-  // log('Flux vidéo reçu.');
+
   video.onerror = function ()
   {
     // log('video.onerror');
