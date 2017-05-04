@@ -20,13 +20,13 @@ echo '<div class="container_home" value="password" id="password_container">
 echo '<div class="container_home" value="button" id="button_container"> <input type="submit" value="Enjoy!" class="button" onclick="change_account()"></input></div>';
 ?>
 <link rel="stylesheet" type="text/css" href="../css/myhome.css">
-<div id="mymenu">
-
+<div id="info">
+<?php include('info.php') ?>
 </div>
 <div id="myalbum">
 	
 </div>
 <script type="text/javascript" src="../js/Myhome.js"></script>
-<!-- <script type="text/javascript" src="../js/scroll.js"></script> -->
+<script type="text/javascript" src="../js/infome.js"></script>
 <script type="text/javascript" src="../js/ajax.js"></script>
 </body>

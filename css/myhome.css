@@ -20,7 +20,11 @@ body{
 	/*overflow: scroll;*/
 	/*overflow-y: ;*/
 }
-
+#info{
+	font-family : "Avenir Next","Helvetica Neue",Arial,Helvetica,sans-serif;
+	font-size: x-large;
+	text-align: center;
+}
 .collagediv{
 	display : "interval";
 	margin: auto;

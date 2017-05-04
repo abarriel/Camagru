@@ -43,6 +43,7 @@ document.onreadystatechange = () => {
 				var newContainer = container.cloneNode(true);
 				newContainer.appendChild(elm);
 				newContainer.querySelector('span').innerHTML = "💙 "+ value + "🖊 100";
+				newContainer.addEventListener('ondblclick',deletePicture);
 				album.appendChild(newContainer);
 				});
 			// console.log(Object.(xhr.responseText));
@@ -51,7 +52,9 @@ document.onreadystatechange = () => {
 		}
 	};
 }
-function overLike(){
+
+function deletePicture(){
+	console.log("d");
 	// var xhr = getXMLHttpRequest();
 	// xhr.open("POST", "../back/photos.php", true);
 	// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

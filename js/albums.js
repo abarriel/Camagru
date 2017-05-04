@@ -73,8 +73,7 @@ function addLike()
 					this.querySelector('img').src = "../data/heart.png";
 				else  if (xhr.responseText === "unLike")
 					this.querySelector('img').src = "../data/unlike.png";
-			
-			}
+					}
 	};
 	this.querySelector('div').style.transition = '1s';
 	this.querySelector('div').style.opacity = '1';

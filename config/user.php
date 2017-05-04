@@ -24,6 +24,18 @@ class user{
 		$this->db_con = connect_db();
 	}
 
+	public function getAllInfo(){
+		$stmt = $this->db_con->prepare("SELECT likes,picture FROM data WHERE login=:login");
+		$val = $stmt->execute(array("login"=> $this->login));
+		$picture = $stmt->rowCount();
+		$likes = 0;
+		while($data = $stmt->fetch())
+		{
+			$likes += $data['likes'];
+		}
+		$info = array("likes" => $likes, "picture" => $picture);
+		return $info;
+	}
 	public function addCollage(){
 		$stmt = $this->db_con->prepare("INSERT INTO data(login,picture,likes,comments) VALUES (:login, :picture, :likes, :comments)");
 		$val = $stmt->execute(array(
