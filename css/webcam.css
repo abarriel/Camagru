@@ -46,8 +46,17 @@
 	position: relative;
 	/*background-color: red;*/
 	text-align: center;
+	/*margin-left: 2000px;*/
 	width: 35%;
 	height: 100%;
+}
+@media only screen and (max-width: 2000px) {
+    body {
+        background-color: lightblue;
+    }
+    .galerie{
+    	display:none;
+    }
 }
 #filter{
 	direction: rtl;

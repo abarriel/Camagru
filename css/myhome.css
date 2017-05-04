@@ -3,6 +3,7 @@ body{
 	margin:auto;
 }
 #myalbum{
+		-webkit-animation: coucou 1s ease-out;
 	margin: auto;
 	/*position: absolute;*/
 	/*overflow-y: scroll;*/
@@ -51,6 +52,8 @@ width: 440px;
 #overlay:hover {
 	background: black;
 	opacity: 0.7;
+	font-size: bold;
+	font-size: x-large;
 	color: white;
 }
 #myrow {
@@ -60,3 +63,15 @@ width: 440px;
 	display: table-cell;
 	vertical-align: middle;
 }
+
+
+@keyframes coucou {
+	0% {
+		opacity: 0;
+		transform: translateY(200px);
+	} 100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
