@@ -12,15 +12,40 @@ body{
 	/*white-space:nowrap; */
 	/*display:block;*/
 	/*background-color: red; */
-	width: 85%;
+	width: 69%;
 	max-width: 2050px;
 /*	width: 1970px;*/
 	height: 1000px;
+	-webkit-animation: coucou .5s ease-out;
 
 	/*overflow-x: scroll;*/
 	/*overflow: scroll;*/
 	/*overflow-y: ;*/
 }
+
+@keyframes coucou {
+	0% {
+		opacity: 0;
+		transform: translateY(200px);
+	} 100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes holla {
+	0% {
+		opacity: 0;
+		transform: translateY(200px);
+	} 50% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
 #album img{
 	margin-left: 10px;
 	margin-top: 10px;
@@ -34,15 +59,15 @@ body{
 	left: 10px;
 	position: relative;
 	display:inline-block;
-	width: 650px;
-	height: 480px;
+	width: 550px;
+	height: 380px;
 	/*border: 2px solid white;*/
 }
 #container img {
 	margin-left: 10px;
 	margin-top: 10px;
-	width: 650px;
-	height: 480px;
+	width: 550px;
+	height: 380px;
 }
 #overlay {
 	position: absolute;

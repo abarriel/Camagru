@@ -40,35 +40,55 @@ document.onreadystatechange = () => {
 	}
 }
 
+const checkImage = (file, cb) => {
+	const img = new Image();
+
+	const _URL = window.URL || window.webkitURL;
+
+	img.onload = () => {
+		// NICE
+		cb(file);
+	}
+
+	img.onerror = () => {
+		alert("Wrong Type!");
+		// console.log("Wrong type!!!");
+	}
+	console.log(file);
+	if(file)
+	img.src = _URL.createObjectURL(file);
+}
+
+const loadImage = (file) => {
+	var fr = new FileReader();
+	fr.readAsDataURL(file);
+	fr.onload = function () {
+		video.style.display = "none";
+		on_elm.style.left = "-9999px";
+		canvasUpload.style.display = "block";
+		canvas.style.display = "none";
+		hideUpload.style.display = "block";
+		// console.log(this);
+		// var collage = new Image()
+		viewUpload.src = this.result;
+		var width = 650;
+		var height = 480;
+		img = document.createElement("img");
+		canvasUpload.width = width;
+		canvasUpload.height = height;
+		var ctx = canvasUpload.getContext("2d");
+		ctx.drawImage(viewUpload, 0, 0, width, height);
+		var dataurl = canvasUpload.toDataURL("image/png");
+		// console.log(dataurl);
+		viewUpload.src = dataurl;
+	};
+
+}
+
 function uploadFile(evt){
 
 	var tgt = evt.target || window.event.srcElement,
 	files = tgt.files;
-	if (FileReader && files && files.length)
-	{
-		var fr = new FileReader();
-		fr.readAsDataURL(files[0]);
-		fr.onload = function () {
-			video.style.display = "none";
-			on_elm.style.left = "-9999px";
-			canvasUpload.style.display = "block";
-			canvas.style.display = "none";
-			hideUpload.style.display = "block";
-			viewUpload.src = this.result;
-			var width = 650;
-			var height = 480;
-			img = document.createElement("img");
-			canvasUpload.width = width;
-			canvasUpload.height = height;
-			var ctx = canvasUpload.getContext("2d");
-			ctx.drawImage(viewUpload, 0, 0, width, height);
-			var dataurl = canvasUpload.toDataURL("image/png");
-			// console.log(dataurl);
-			viewUpload.src = dataurl;
-		};
-	}
-	else {
-	}
-
+	checkImage(files[0], loadImage);
 }
 upload.addEventListener("change",uploadFile);

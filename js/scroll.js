@@ -2,7 +2,7 @@ const start = 602;
 var img = 650;
 var imgCount = 0;
 album.addEventListener('scroll', function (event) {
-    console.log("" + album.style.height + " : " + album.scrollTop + " : " +album.scrollHeight +" : "+ window.innerHeight );
+    // console.log("" + album.style.height + " : " + album.scrollTop + " : " +album.scrollHeight +" : "+ window.innerHeight );
     if ((parseInt(album.style.height) + album.scrollTop) >= album.scrollHeight)
         {
             console.log("ok");
