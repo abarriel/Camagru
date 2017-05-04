@@ -6,14 +6,16 @@ album.addEventListener('scroll', function (event) {
     if ((parseInt(album.style.height) + album.scrollTop) >= album.scrollHeight)
         {
             console.log("ok");
-                newCollages.slice(imgCount,imgCount + 3).forEach(function(element, index){
+            newCollages.slice(imgCount,imgCount + 3).forEach(function(element, index){
                 elm = document.createElement("img");
                 elm.ondblclick = addLike;
                 elm.src = "../data/image/"+element+".png";  
                 var newContainer = container.cloneNode(true);
-            newContainer.appendChild(elm);
-            album.appendChild(newContainer);
+                newContainer.appendChild(elm);
+               album.appendChild(newContainer);
+        newContainer.ondblclick = addLike;
                 imgCount++;
-                }); 
+            }); 
         }
-});
+    });
+

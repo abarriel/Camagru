@@ -6,6 +6,7 @@ class user{
 	private $img;
 	private $comments;
 	private $likes;
+	private $liker;
 	public  $error;
 
 	public function __construct(array $kwargs){
@@ -17,6 +18,8 @@ class user{
 			$this->comments = $kwargs['comments'];
 		if (array_key_exists('likes', $kwargs))
 			$this->likes = $kwargs['likes'];
+		if (array_key_exists('liker', $kwargs))
+			$this->liker = $kwargs['liker'];
 		$this->date = date('Y-m-d H:i:s');
 		$this->db_con = connect_db();
 	}
@@ -36,28 +39,41 @@ class user{
 		$val = $stmt->execute();
 		$imgs = [];
 		while ($data = $stmt->fetch())
-		{
 			$imgs[] = $data['picture'];
-			// $ok .= $data['picture'];
-			// $ok .= "\n";
-		}
 		return $imgs;
 	}
+
+	public function getLiker()
+	{
+		$stmt = $this->db_con->prepare("SELECT liker FROM data WHERE picture=:picture");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture,
+			));
+		$data = $stmt->fetch();
+		return ($data['liker']);
+	}
+
+	public function updateLiker($liker)
+	{
+		$stmt = $this->db_con->prepare("UPDATE data SET liker=:liker WHERE picture=:picture");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture,
+			"liker" => $liker
+			));
+	}
+
 	public function addLike(){
 		$stmt = $this->db_con->prepare("UPDATE data SET likes = likes + 1 WHERE picture=:picture");
 		$val = $stmt->execute(array(
 			"picture" => $this->picture,
 			));
-		return ($data['likes']);
 	}
 
 	public function unLike(){
-		$stmt = $this->db_con->prepare("UPDATE data SET likes = likes - 1 WHERE picture=:picture AND likes >= 0");
+		$stmt = $this->db_con->prepare("UPDATE data SET likes = likes - 1 WHERE picture=:picture AND likes > 0");
 		$val = $stmt->execute(array(
 			"picture" => $this->picture,
-			// "likes" => $data
 			));
-		return ($data['likes']);
 	}
 
 	public function __destruct(){}

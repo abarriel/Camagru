@@ -6,6 +6,7 @@ var newCollages = 0;
 var container = 0;
 var overlay = 0;
 var myrow = 0;
+var img = 0;
 var mycell = 0;
 // album.style.with = "1970px";
 document.onreadystatechange = () => {
@@ -62,17 +63,30 @@ function printCollage(){
 
 function addLike()
 {
+	var like2Unlike = 0; 
 	var xhr = getXMLHttpRequest();
 	xhr.open("POST", "../back/save_collage.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	// var params = "addLike=yes&collage=0379113a2b17aef05dd8cf1a32f0aad3";
 	var params = "addLike=yes&collage="+this.childNodes[1].src.slice(-36).slice(0,32);
 	xhr.send(params);
-	xhr.onreadystatechange = function(){
+	xhr.onreadystatechange = function(elm,ok){
 		if(xhr.readyState === 4 && (xhr.status == 200 ))
-		console.log(xhr.responseText);
+			{
+				if (xhr.responseText === "like")
+					like2Unlike = "like";
+				else  if (xhr.responseText === "unLike")
+					like2Unlike = "unLike";
+			}
 	};
-
+	// ready
+	// console.log(like2Unlike);
+	// img.src = "../data/unlike.png";  
+	// if (like2Unlike  === "like")
+	// this.firstChild.firstChild.childNodes[0].firstChild.src = "../data/unlike.png";
+	// else if (like2Unlike  === "unLike")
+	this.firstChild.firstChild.childNodes[0].firstChild.src = "../data/heart.png";
+	// this.childNodes[0].style.display = "none";
 	this.childNodes[0].style.transition = '1s';
 	this.childNodes[0].style.opacity = '1';
 	// this.disabled = true;
