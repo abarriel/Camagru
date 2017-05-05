@@ -36,8 +36,8 @@ include("../back/error_account.php");
 		<input  type="submit" name="submit" value="Save!" id="save" class="button"/>
 	</div>
 	
-	<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filters... <span id="selectBackground" ></span></h2>
-	<div id="filter">
+	
+	<div id="filter"><h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filters... <span id="selectBackground" ></span></h2>
 	</div> </div>
 	<?php include("footer.php");?>
 	<script type="text/javascript" src="../js/ajax.js"></script>
