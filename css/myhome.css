@@ -1,6 +1,13 @@
 body{
 	margin:auto;
 }
+header{
+	position:relative;
+	height: 120px;
+	margin: auto;
+	text-align: center;
+	background-color: white;
+}
 #myalbum{
 	-webkit-animation: coucou 1s ease-out;
 	margin: auto;

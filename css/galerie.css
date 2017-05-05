@@ -2,7 +2,8 @@
 	display: none; 
 }
 body{
-	height: 1500px;
+	/*IMPORTANT SI ENELVE HEIGH ALORS LE SCROLL NE MARCHE PLUS A CHECKER*/
+	/*height: 1500px;*/
 }
 #galerie{
 	overflow: auto;

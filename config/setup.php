@@ -1,5 +1,5 @@
 <?php 
-require_once("connect_db.php");
+require_once("database.php");
 $db_con = connect_db();
 $db_con->exec("CREATE DATABASE IF NOT EXISTS `camagru` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `camagru`;

@@ -24,6 +24,7 @@ date_default_timezone_set('CET');
 	<?php
 	if( $_SERVER['REQUEST_URI'] === "/camagru/client/home.php")
 	{
+		echo '<link rel="stylesheet" type="text/css" href="../css/myhome.css">';
 		echo '<div class="menu_text" style="background-color: rgb(255,252,0); width: 100%">
 		<div class="menu_text">';
 			echo '<a href="#" class="text_header" name="email" style="font-size:small" onclick="elm_visible(this.name)">Change Mail</a>';

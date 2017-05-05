@@ -1,5 +1,5 @@
 <?php	
-// include('connect_db.php');
+// include('database.php');
 session_start();
 class user{
 	private $login;

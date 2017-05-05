@@ -2,7 +2,7 @@
 session_start();
 if (!$_SESSION['loggued_on_user'])
 	header("Location: ../index.php");
-include('../config/connect_db.php');
+include('../config/database.php');
 include('../config/user.php');
 
 echo $_SESSION['loggued_on_user'];

@@ -39,6 +39,7 @@ include("../back/error_account.php");
 	<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filters... <span id="selectBackground" ></span></h2>
 	<div id="filter">
 	</div> </div>
+	<?php include("footer.php");?>
 	<script type="text/javascript" src="../js/ajax.js"></script>
 	<script type="text/javascript" src="../js/webcam.js"></script>
 	<script type="text/javascript" src="../js/camera.js"></script>
