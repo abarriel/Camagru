@@ -25,7 +25,11 @@ if ($_POST['action'] === "deletePicture" && $_POST['key'] && $_SESSION['loggued_
 {
 	$fetch = new user(array("picture"=>$_POST['key']));
 	$val = $fetch->deletePicture();
-	echo "reussi";
+	echo "../data/image/".$_POST['key'].".png";
+	if (file_exists("../data/image/".$_POST['key'].".png"))
+		unlink("../data/image/".$_POST['key'].".png");
+	// echo "reussi";
+
 
 }
 
