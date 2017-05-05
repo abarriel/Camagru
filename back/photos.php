@@ -21,16 +21,14 @@ if ($_POST['action'] === "myself" && $_SESSION['loggued_on_user'])
 	$val = $fetch->getCollageUser($_SESSION['loggued_on_user']);
 	echo json_encode($val);
 }
-if ($_POST['action'] === "deletePicture" && $_POST['key'] && $_SESSION['loggued_on_user'])
+else if ($_POST['action'] === "deletePicture" && $_POST['key'] && $_SESSION['loggued_on_user'])
 {
 	$fetch = new user(array("picture"=>$_POST['key']));
 	$val = $fetch->deletePicture();
-	echo "../data/image/".$_POST['key'].".png";
+	// echo "../data/image/".$_POST['key'].".png";
 	if (file_exists("../data/image/".$_POST['key'].".png"))
 		unlink("../data/image/".$_POST['key'].".png");
 	// echo "reussi";
-
-
 }
 
 ?>

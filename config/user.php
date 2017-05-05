@@ -9,6 +9,7 @@ class user{
 	private $liker;
 	public  $error;
 
+
 	public function __construct(array $kwargs){
 		if (array_key_exists('login', $kwargs))
 			$this->login = $kwargs['login'];
@@ -65,7 +66,9 @@ class user{
 			$collage[] = $data['picture'];
 			$likes[] = $data['likes'];
 		}
+		if (isset($collage) && isset($likes))
 		$imgs = array_combine($collage, $likes);
+		
 		return $imgs;
 	}
 
@@ -106,6 +109,12 @@ class user{
 		$stmt = $this->db_con->prepare("DELETE FROM data WHERE picture=:picture");
 		$val = $stmt->execute(array(
 			"picture" => $this->picture
+			));
+	}
+	public function destroyPictures(){
+		$stmt = $this->db_con->prepare("DELETE FROM data WHERE login=:login");
+			$val = $stmt->execute(array(
+			"login" => $this->login
 			));
 	}
 

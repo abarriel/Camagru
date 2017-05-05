@@ -37,6 +37,9 @@ document.onreadystatechange = () => {
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 				{	
+				console.log(xhr.responseText);
+				if (xhr.responseText === "null")
+					return;
 				Object.entries(JSON.parse(xhr.responseText)).forEach(([key, value]) => {
 				elm = document.createElement("img");
 				elm.src = "../data/image/"+key+".png";  
