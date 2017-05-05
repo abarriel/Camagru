@@ -35,10 +35,24 @@ const checkPassword = () =>{
 	{
 		repeat_password.style.backgroundColor = "#e74c3c";
 		errorContainer.innerHTML = "Hint : You shall repeat your password correctly";
+	
 	}
 	else
 	{
 		repeat_password.style.backgroundColor = "#27ae60";
+		errorContainer.innerHTML = "";
+	}
+}
+const checkPasswordType = () => {
+	
+	if (!password.value.match(/^(?=.*[a-z])(?=.*\d)(?=.*(_|[^\w])).{5,}$/))
+	{
+		password.style.backgroundColor = "#e74c3c";
+		errorContainer.innerHTML = "Hint : You password must contains at least a digit and a special char!";
+	}
+	else
+	{
+		password.style.backgroundColor = "#27ae60";
 		errorContainer.innerHTML = "";
 	}
 }
@@ -91,7 +105,7 @@ function isValidLogin(login)
 }
 function isValidPassword(password, repeat_password)
 {
-	if (password === repeat_password)
+	if ((password === repeat_password) && password.match(/^(?=.*[a-z])(?=.*\d)(?=.*(_|[^\w])).{5,}$/))
 		return (true);
 	else
 		return (false);
@@ -121,4 +135,7 @@ login.addEventListener('keyup', checkName)
 if(repeat_password)
 repeat_password.addEventListener('keyup', checkPassword)
 if(password)
+{
+password.addEventListener('keyup', checkPasswordType)
 password.addEventListener('keyup', checkPassword)
+}

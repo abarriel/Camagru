@@ -22,12 +22,12 @@ if ($_POST['submit'] == 'Register!')
     header("Location: ../index.php");
 }
 
-if ($_POST['submit'] == 'Login!' && isset($_POST['passwd']) && isset($_POST['email']))
+if ($_POST['submit'] == 'Login!' && isset($_POST['passwd']) && isset($_POST['login']))
 {
     $password = hash('sha256', $_POST['passwd']);
     $user = New account(array(
     	'password' => $password, 
-    	'email' => $_POST['email']
+    	'login' => $_POST['login']
         ));
     $var = $user->Connect();
     if ($var === 1)

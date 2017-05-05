@@ -111,9 +111,9 @@ class account{
 	}
 
 	public function Connect(){
-		$stmt = $this->db_con->prepare("SELECT email, valid, password, login FROM user_db WHERE email=:email");
+		$stmt = $this->db_con->prepare("SELECT email, valid, password, login FROM user_db WHERE login=:login");
 		$stmt->execute(array(
-			":email" => $this->email
+			":login" => $this->login
 			));
 		$count = $stmt->rowCount();
 		if ($count == 0)

@@ -11,7 +11,6 @@ function	addFilter(index)
 {
 
 	document.getElementById('buttonSnap').disabled = false;
-	// console.log(index);
 	on_elm.style.background = "url(../data/"+index+".png";
 	on_elm.style.display = "block";
 	on_elm.style.backgroundRepeat = "no-repeat";
