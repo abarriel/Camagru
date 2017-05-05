@@ -18,9 +18,9 @@ document.onreadystatechange = () => {
 			mycell = document.createElement("div");
 			mycell.id = "mycell";
 			text = document.createElement("span");
-			// img = document.createElement("img");
+			deleteText = document.createElement("span");
+			mycell.appendChild(deleteText);
 			mycell.appendChild(text);
-			// mycell.appendChild(img);
 			myrow.appendChild(mycell);
 			overlay.appendChild(myrow);
 			container.appendChild(overlay);
@@ -42,26 +42,47 @@ document.onreadystatechange = () => {
 				elm.src = "../data/image/"+key+".png";  
 				var newContainer = container.cloneNode(true);
 				newContainer.appendChild(elm);
-				newContainer.querySelector('span').innerHTML = "💙 "+ value + "🖊 100";
+				var spanContainer = newContainer.querySelectorAll('span');
+				spanContainer[0].innerHTML = "💙 "+ value + "🖊 100 ";
+				spanContainer[1].innerHTML = " ❌";
+				// console.log(elm);
+				spanContainer[1].addEventListener('click',deletePicture, elm);
+				spanContainer[1].url = key;
 				newContainer.addEventListener('ondblclick',deletePicture);
 				album.appendChild(newContainer);
 				});
-			// console.log(Object.(xhr.responseText));
-			// console.log(xhr.responseText.split(","));
-
 		}
 	};
 }
 
-function deletePicture(){
-	console.log("d");
-	// var xhr = getXMLHttpRequest();
-	// xhr.open("POST", "../back/photos.php", true);
-	// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	// xhr.send("action=getLike");
-	// if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
-	// 	{	
-	// 		this.querySelector('span').innerHTML = this.querySelector('img').src;
-	// 	}
-	// console.log("d");
+function deletePicture(evt){
+	// console.log(evt.target.url); 
+	var r = confirm("Are you sure you want to delete this picture ?\nPress Ok or Cancel");
+    if (r == true)
+    	{
+	var xhr = getXMLHttpRequest();
+	xhr.open("POST", "../back/photos.php", true);
+	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xhr.send("action=deletePicture&key="+evt.target.url);
+	xhr.onreadystatechange = () => {
+		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
+		{	
+			console.log(xhr.response);
+			console.log(this);
+			window.location.reload();
+			// collages = JSON.parse(xhr.responseText).slice(0,7);
+			// newCollages = JSON.parse(xhr.responseText).slice(7);
+			// collages.forEach(function(element, index) {
+			// elm = document.createElement("img");
+			// elm.src = "../data/image/"+element+".png";  
+			// var newContainer = container.cloneNode(true);
+			// newContainer.appendChild(elm);
+			// album.appendChild(newContainer);
+	  //   	newContainer.ondblclick = addLike;
+			// // album.appendChild(elm);
+			// // console.log(elm);	
+			// });
+		}
+	};
+}
 }

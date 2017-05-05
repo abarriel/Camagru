@@ -1,4 +1,13 @@
-var elm = document.getElementsByClassName('container_home');
+var container_home = document.getElementsByClassName('container_home');
+
+function isValidMailReset(mail)
+{
+	if (!mail.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
+		return (false);
+	else
+		return (true);
+}
+
 
 function container_hidden(){
 	Array.prototype.forEach.call(elm, function(element){
@@ -7,35 +16,40 @@ function container_hidden(){
 		element.style.display = "none";
 	});
 }
-function elm_visible(action){
-	Array.prototype.forEach.call(elm, function(element){
+
+function elm_visible(value){
+
+	console.log(value);
+	Array.prototype.forEach.call(container_home, function(element){
 		var name = element.id.substr(0,element.id.length - 10);
- 		// console.log(action.name);
- 		// console.log(name);
- 		if (action.name === name)
+ 		if (value === name)
  			element.style.display = "block";
  		else
- 			element.style.display = "none";	
+			element.style.display = "none";	
  	});
-	elm[3].style.display = "block";
-	// console.log(elm);
-	// container_hidden()
+	container_home[3].style.display = "block";
 }
+
 function change_account(){
-	if (email.value && isValidMail(email.value))
+	console.log("Change Account");
+	// console.log(email.value);
+	console.log(email[0].value);
+	if (email[0].value && isValidMailReset(email[0].value))
 	{
+		console.log("Change mail");
 		var xhr = getXMLHttpRequest();
 		xhr.open("POST", "../back/modif_session.php", true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		params = 
 		"submit="+ encodeURIComponent('Enjoy!') +
-		"&email=" + encodeURIComponent(email.value);
+		"&email=" + encodeURIComponent(email[0].value);
 		console.log(params);
 		xhr.send(params);
 		window.location.reload();
 	}
 	if (old_passwd.value && new_passwd.value)
 	{
+		console.log(old_passwd);
 		var xhr = getXMLHttpRequest();
 		xhr.open("POST", "../back/modif_session.php", true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -61,8 +75,6 @@ function delete_account(){
 		xhr.send(params);
 		window.location.reload();
     }
-
-
 	// var xhr = getXMLHttpRequest();
 	// 	xhr.open("POST", "back/modif_session.php", true);
 	// 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

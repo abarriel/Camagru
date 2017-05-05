@@ -26,10 +26,10 @@ date_default_timezone_set('CET');
 			<?php
 			if( $_SERVER['REQUEST_URI'] === "/camagru/client/home.php")
 			{
-				echo '<a href="#" class="text_header" name="email" style="font-size:small" onclick="elm_visible(this)">Change Mail</a>';
-				echo '<a href="#" class="text_header" name="password" style="font-size:small"  onclick="elm_visible(this)" >Change Password</a>';
-				echo '<a href="#" class="text_header" name="bio" style="font-size:small"  onclick="elm_visible(this)" >Change Bio</a>';
-				echo'<a href="#" class="text_header" name="delete" style="font-size:small" onclick="delete_account()">Delete</a>';
+				echo '<a href="#" class="text_header" name="email" style="font-size:small" onclick="elm_visible(this.name)">Change Mail</a>';
+				echo '<a href="#" class="text_header" name="password" style="font-size:small"  onclick="elm_visible(this.name)" >Change Password</a>';
+				echo '<a href="#" class="text_header" name="bio" style="font-size:small"  onclick="elm_visible(this.name)" >Change Bio</a>';
+				echo'<a href="#" class="text_header" name="delete" style="font-size:small" onclick="delete_account(this.name)">Delete</a>';
 			}
 			?>
 		</div>

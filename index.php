@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("config/setting.php");
+include("config/setting.php");
 if (isset($_SESSION['loggued_on_user']))
 	header('Location: client/home.php');
 if ($_SESSION['alert'] === "register_but_not_confirm")
