@@ -12,9 +12,9 @@ include('back/error_account.php');
 ?>
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="data/fav.ico" />
+  <link rel="icon" href="data/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/album.css">
   <link rel="stylesheet" type="text/css" href="css/form.css">
   <title>Camagru</title>
 	<!-- <script type="text/javascript" src="js/facebook_register.js"></script> -->
@@ -69,8 +69,10 @@ include('back/error_account.php');
 <?php
 // include('client/footer.php');
 ?>
+<div id="album" style="height: 1000px"></div>
 </body>
 
+<script type="text/javascript" src="js/publicgal.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript" src="js/parse_register.js"></script>
 <script type="text/javascript" src="js/index_pass.js"></script>

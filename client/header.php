@@ -5,7 +5,7 @@ date_default_timezone_set('CET');
 ?>
 <head>
 	<meta charset="utf-8">
-	<link rel="icon" href="../data/fav.ico" />
+	<link rel="icon" href="../data/favicon.ico" />
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../css/form.css">

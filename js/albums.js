@@ -48,6 +48,8 @@ function printCollage(){
 			newContainer.appendChild(elm);
 			album.appendChild(newContainer);
 	    	newContainer.ondblclick = addLike;
+	    	newContainer.stockParams = element;
+	    	newContainer.onclick = getInfoPicture;
 			// album.appendChild(elm);
 			// console.log(elm);	
 			});
@@ -56,6 +58,10 @@ function printCollage(){
 	console.log("Genre");
 }
 
+function getInfoPicture(){
+	console.log(this.stockParams);
+	window.location = '../client/photo.php?ref='+this.stockParams;
+}
 function addLike()
 {
 	var like2Unlike = 0; 

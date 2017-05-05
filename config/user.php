@@ -71,7 +71,16 @@ class user{
 		
 		return $imgs;
 	}
-
+	public function ifPicture(){
+		$stmt = $this->db_con->prepare("SELECT picture FROM data WHERE picture=:picture");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture,
+			));
+		$picture = $stmt->rowCount();
+		if ($picture == 0)
+			return 1;
+		return 0;
+	}
 	public function getLiker()
 	{
 		$stmt = $this->db_con->prepare("SELECT liker FROM data WHERE picture=:picture");

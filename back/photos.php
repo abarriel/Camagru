@@ -1,14 +1,22 @@
 <?php
 session_start();
+include("../config/user.php");
+include("../back/error_account.php");
+include('../config/account.php');
+if($_POST['action'] === "allPublic")
+{
+	$fetch = new user(array());
+	$val = $fetch->getCollage();
+	echo json_encode($val);
+return;
+}
 if (!$_SESSION['loggued_on_user'])
 {
 	header("Location: ../index.php");
 	exit();
 }
+
 // include("header.php");
-include('../config/account.php');
-include("../config/user.php");
-include("../back/error_account.php");
 if ($_POST['action'] === "all" && $_SESSION['loggued_on_user'])
 {
 	$fetch = new user(array());
