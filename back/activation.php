@@ -12,7 +12,7 @@ if ($res === 3)
 if ($res === 0)	
 {
 	$_SESSION['alert'] = "Thank You ".$_SESSION['loggued_on_user']." ! You can now enjoy sharing pictures!";
-	header("Location: ../client/home.php");
+	header("Location: ../index.php");
 	return ;
 }
 header("Location: ../index.php");

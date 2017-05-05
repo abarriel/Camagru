@@ -46,13 +46,11 @@ const checkImage = (file, cb) => {
 	const _URL = window.URL || window.webkitURL;
 
 	img.onload = () => {
-		// NICE
 		cb(file);
 	}
 
 	img.onerror = () => {
 		alert("Wrong Type!");
-		// console.log("Wrong type!!!");
 	}
 	console.log(file);
 	if(file)
@@ -68,8 +66,6 @@ const loadImage = (file) => {
 		canvasUpload.style.display = "block";
 		canvas.style.display = "none";
 		hideUpload.style.display = "block";
-		// console.log(this);
-		// var collage = new Image()
 		viewUpload.src = this.result;
 		var width = 650;
 		var height = 480;
@@ -79,7 +75,6 @@ const loadImage = (file) => {
 		var ctx = canvasUpload.getContext("2d");
 		ctx.drawImage(viewUpload, 0, 0, width, height);
 		var dataurl = canvasUpload.toDataURL("image/png");
-		// console.log(dataurl);
 		viewUpload.src = dataurl;
 	};
 

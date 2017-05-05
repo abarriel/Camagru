@@ -23,6 +23,8 @@ function saveCollage(){
 function addCollage(path){
 	elm = document.createElement("img");
 	elm.src = path;
+
+	galerie.removeChild(child: Node)
 	galerie.appendChild(elm);
 	// galerie.insertbefore(elm, galerie);
 	// insertbefore	

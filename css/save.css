@@ -6,7 +6,6 @@
 .webcam{
 	position: absolute;
 	background-color: brown;
-	/*margin-top: 100px;*/
 	width: 60%;
 	height: 90%;
 	text-align: center;
@@ -16,7 +15,6 @@
 	float:right;
 	position: relative;
 	background-color: yellow;
-	/*margin-top: 100px;*/
 	width: 70%;
 	height: 100%;
 }
@@ -25,7 +23,6 @@
 	float:left;
 	position: relative;
 	background-color: green;
-	/*margin-top: 100px;*/
 	text-align: center;
 
 	width: 30%;
@@ -35,10 +32,8 @@
 	width: 150px;
 }
 #video{
-	/*position: absolute;*/
 	float:left;
 	height: 480px;
-	/*z-index: 2;*/
 	width:  640px;
 	background-color: purple;
 	z-index: 1;

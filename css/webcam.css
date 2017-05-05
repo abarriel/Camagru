@@ -1,23 +1,18 @@
 .full_page{
 		margin:0;
 	font-family : "Avenir Next","Helvetica Neue",Arial,Helvetica,sans-serif;
-	/*font-family: 'Montserrat', sans-serif;*/
 	font-weight: 500;
 	color: black;
 	background-color: white;
 	width: 1500px;
 	min-width: 2000px;
 	height: 100%;
-	/*background-color: blue;*/
 }
 #viewUpload{
-	/*width: 480px;*/
-	/*height: 640px;*/
 	display: none;
 }
 .webcam{
 	position: absolute;
-	/*background-color: brown;*/
 	width: 60%;
 	height: 90%;
 	text-align: center;
@@ -26,47 +21,39 @@
 .capture{
 	float: left;
 	position: absolute;
-	/*background-color: grey;*/
-	left:360;
+	left:10%;
 	width: 50%;
 	text-align: center;
 	margin: auto;
 }
-/*<div id="selectFilter">Select Filter!</div>	<div id="selectBackground">Background!</div>*/
-#selectBackground{
-	cursor: pointer;
-}
+
 #file-input
 {
     display: none;
 }
 .galerie{
-	/*margin-left:10px;*/
 	float:right;
 	position: relative;
-	/*background-color: red;*/
 	text-align: center;
-	/*margin-left: 2000px;*/
 	width: 35%;
 	height: 100%;
 }
-@media only screen and (max-width: 2000px) {
-    body {
-        background-color: lightblue;
-    }
+@media only screen and (max-width: 2300px) {
     .galerie{
     	display:none;
+    } 
+    .capture{
+    	left:700px;
     }
 }
+
 #filter{
 	direction: rtl;
 	float:left;
 	position: relative;
-	/*min-width: 500px;*/
-	/*background-color: green;*/
 	text-align: center;
 	overflow: auto;
-	width: 20%;
+	width: 25%;
 	height: 100%;
 }
 .img_filter{
@@ -76,7 +63,6 @@
 	float:left;
 	height: 480px;
 	width:  640px;
-	/*background-color: purple;*/
 	z-index: 1;
 }
 
@@ -87,24 +73,19 @@
 	height: 480px;
 	z-index: 2;
 	width:  640px;
-	/*background-image: url('../data/1.png');*/
 }
 .button_snap{
 	position: relative;
-	/*background-color: red;*/
 }
 .context_video{
 	margin:auto;
 	margin-top: 10px;
-	/*height: 80%;*/
 	height: 1000px;
-	/*background-color: green;*/
 	width: 640px;
 }
 
 .button{
 	margin:auto;
-	/*float: left;*/
 	text-align: center;
 	width: 9%;
 	min-width: 150px;

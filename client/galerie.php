@@ -11,11 +11,11 @@ include("../back/error_account.php");
 <div class="full_page">
 	<!-- <div class="webcam"> -->
 	<div class="galerie" id="galerie">
-		<h2>Galerie</h2>
+		<h2>Last pictures taken </h2>
 	</div>
 	<div class="capture">
 		<div class="button_snap">
-			<h2> Take a Picture!</h2>
+		
 			<img id="img"/>
 			<input type="image" src="../data/camera.svg" alt="Submit" type="button" id="buttonSnap" width="48"  height="48"/>
 			<input type="image" src="../data/start.png" alt="Submit" width="48" height="48" id="buttonStart" value="Démarrer" disabled="disabled" onclick="start()"/>
@@ -36,7 +36,7 @@ include("../back/error_account.php");
 		<input  type="submit" name="submit" value="Save!" id="save" class="button"/>
 	</div>
 	
-	<h2>Select Filter! or <span id="selectBackground" >Background</span></h2>
+	<h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filters... <span id="selectBackground" ></span></h2>
 	<div id="filter">
 	</div> </div>
 	<script type="text/javascript" src="../js/ajax.js"></script>

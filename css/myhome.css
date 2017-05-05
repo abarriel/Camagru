@@ -1,24 +1,10 @@
 body{
-	/*overflow-y:scroll*/
 	margin:auto;
 }
 #myalbum{
-		-webkit-animation: coucou 1s ease-out;
+	-webkit-animation: coucou 1s ease-out;
 	margin: auto;
-	/*position: absolute;*/
-	/*overflow-y: scroll;*/
-	/*height: 100%;*/
-	/*overflow:scroll;*/
-	/*overflow-y: hidden;*/
-	/*white-space:nowrap; */
-	/*display:block;*/
-	/*background-color: red; */
-	/*width: auto;*/
-	/*height: 50%;*/
 	width: 55%;
-	/*overflow-x: scroll;*/
-	/*overflow: scroll;*/
-	/*overflow-y: ;*/
 }
 #info{
 	font-family : "Avenir Next","Helvetica Neue",Arial,Helvetica,sans-serif;
@@ -67,7 +53,6 @@ width: 440px;
 	display: table-cell;
 	vertical-align: middle;
 }
-
 
 @keyframes coucou {
 	0% {

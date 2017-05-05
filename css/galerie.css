@@ -6,6 +6,5 @@ body{
 }
 #galerie{
 	overflow: auto;
-	/*background-color: red; */
 	height:  1100px;
 }
