@@ -59,7 +59,6 @@ document.onreadystatechange = () => {
 }
 
 function deletePicture(evt){
-	// console.log(evt.target.url); 
 	var r = confirm("Are you sure you want to delete this picture ?\nPress Ok or Cancel");
     if (r == true)
     	{
@@ -73,18 +72,6 @@ function deletePicture(evt){
 			console.log(xhr.response);
 			console.log(this);
 			window.location.reload();
-			// collages = JSON.parse(xhr.responseText).slice(0,7);
-			// newCollages = JSON.parse(xhr.responseText).slice(7);
-			// collages.forEach(function(element, index) {
-			// elm = document.createElement("img");
-			// elm.src = "../data/image/"+element+".png";  
-			// var newContainer = container.cloneNode(true);
-			// newContainer.appendChild(elm);
-			// album.appendChild(newContainer);
-	  //   	newContainer.ondblclick = addLike;
-			// // album.appendChild(elm);
-			// // console.log(elm);	
-			// });
 		}
 	};
 }

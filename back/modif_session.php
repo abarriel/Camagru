@@ -1,9 +1,9 @@
 <?php
 include('../config/account.php');
 include("../config/user.php");
+session_start();
 if(!$_SESSION['loggued_on_user'])
 	header("Location: ../index.php");
-session_start();
 if ($_POST['submit'] === 'Enjoy!')
 {
 	$user = New account(array());

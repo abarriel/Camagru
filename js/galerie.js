@@ -41,18 +41,13 @@ function printCollage(){
 		{	
 
 			var collage = xhr.responseText;	
-			// fullPage.appendChild(galerie);
-			//remove galerie with appendchild todo! 
 			JSON.parse(collage).reverse().forEach(function(element, index) {
-			// document.appendChild(galerie);
 			elm = document.createElement("img");
 			elm.src = "../data/image/"+element+".png";  
 			galerie.appendChild(elm);
-			// console.log(elm);	
 			});
 		}
 	};
-	// console.log("Genre");
 }
 
 save.addEventListener('click',saveCollage);

@@ -12,8 +12,9 @@ album.addEventListener('scroll', function (event) {
                 elm.src = "../data/image/"+element+".png";  
                 var newContainer = container.cloneNode(true);
                 newContainer.appendChild(elm);
-               album.appendChild(newContainer);
-        newContainer.ondblclick = addLike;
+           album.appendChild(newContainer);
+        newContainer.stockParams = element;
+        newContainer.addEventListener('click',manageClick);
                 imgCount++;
             }); 
         }

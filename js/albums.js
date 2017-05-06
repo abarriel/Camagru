@@ -8,6 +8,7 @@ var overlay = 0;
 var myrow = 0;
 var img = 0;
 var mycell = 0;
+var clicks = 0, timer = null;
 
 document.onreadystatechange = () => {
 	if (document.readyState === "complete")
@@ -29,13 +30,17 @@ document.onreadystatechange = () => {
 		}
 }
 
+function getInfoPicture(){
+	console.log(this.stockParams);
+	window.location = '../client/photo.php?ref='+this.stockParams;
+}
 
 function printCollage(){
 	var xhr = getXMLHttpRequest();
 	xhr.open("POST", "../back/photos.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.send("action=all");
-	console.log("printCollage");
+	// console.log("printCollage");
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 		{	
@@ -47,51 +52,52 @@ function printCollage(){
 			var newContainer = container.cloneNode(true);
 			newContainer.appendChild(elm);
 			album.appendChild(newContainer);
-	    	newContainer.stockParams = element;
-	    	newContainer.addEventListener('dblclick',addLike);
-	    	newContainer.addEventListener('click',getInfoPicture);
-			// album.appendChild(elm);
-			// console.log(elm);	
+	    newContainer.stockParams = element;
+	    newContainer.addEventListener('click',manageClick);
 			});
 		}
 	};
-	console.log("Genre");
+	// console.log("Genre");
 }
 
-function getInfoPicture(){
-	console.log(this.stockParams);
-	window.location = '../client/photo.php?ref='+this.stockParams;
+function manageClick(){
+	clicks++;
+	if(clicks === 1) {
+	   timer = setTimeout(() => {
+      			getInfoPicture.call(this);
+            clicks = 0;  
+            }, 300);
+        } else {
+            clearTimeout(timer); 
+            addLike.call(this);
+            clicks = 0;  
+        }
 }
-function addLike()
-{
+
+function addLike(){
+	console.log(this);
 	var like2Unlike = 0; 
 	var xhr = getXMLHttpRequest();
 	xhr.open("POST", "../back/save_collage.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	// var params = "addLike=yes&collage=0379113a2b17aef05dd8cf1a32f0aad3";
 	var params = "addLike=yes&collage="+this.childNodes[1].src.slice(-36).slice(0,32);
 	xhr.send(params);
-	console.log("d");	
+	console.log(params);
 	xhr.onreadystatechange = () => {
 		if(xhr.readyState === 4 && (xhr.status == 200 ))
 			{
-					console.log(xhr.responseText);
+				console.log(xhr.responseText);
 				if (xhr.responseText === "like") 
-					{
 					this.querySelector('img').src = "../data/heart.png";
-					}
-				else  if (xhr.responseText === "unLike"){
-					console.log(this);
-
+				else  if (xhr.responseText === "unLike")
 					this.querySelector('img').src = "../data/unlike.png";
-				}
 			}
 	};
 	this.querySelector('div').style.transition = '1s';
 	this.querySelector('div').style.opacity = '1';
-	// this.disabled = true;
 	setTimeout(test, 1000, this);
 }
+
 function test(elm)
 {
 	elm.childNodes[0].style.transition = '1s';

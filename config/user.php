@@ -24,6 +24,13 @@ class user{
 		$this->date = date('Y-m-d H:i:s');
 		$this->db_con = connect_db();
 	}
+	public function recupAllInfo(){
+		$stmt = $this->db_con->prepare("SELECT login,comments,likes,liker FROM data WHERE picture=:picture");
+		$val = $stmt->execute(array("picture" => $this->picture));
+		$data = $stmt->fetch(PDO::FETCH_ASSOC);
+		// $data = $stmt->fetch();
+		return $data;
+	}
 
 	public function getAllInfo(){
 		$stmt = $this->db_con->prepare("SELECT likes,picture FROM data WHERE login=:login");
@@ -37,6 +44,7 @@ class user{
 		$info = array("likes" => $likes, "picture" => $picture);
 		return $info;
 	}
+	
 	public function addCollage(){
 		$stmt = $this->db_con->prepare("INSERT INTO data(login,picture,likes,comments) VALUES (:login, :picture, :likes, :comments)");
 		$val = $stmt->execute(array(

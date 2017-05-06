@@ -41,5 +41,4 @@ if ($_POST['addLike'] === "yes" && $_POST['collage'])
 	}
 	$user->updateLiker($liker);
 }
-
 ?>

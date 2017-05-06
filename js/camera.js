@@ -163,17 +163,12 @@ function gotStream(stream)
 
 function start()
 {
-  // viewUpload.src = "";
-  // on_elm.style.display = "block";
-  // video.style.display = "block";
   save.style.display = "none";
   canvasUpload.style.display = "none";
-  // canvas.style.visibility = "hidden";
   if ((typeof window === 'undefined') || (typeof navigator === 'undefined')) log('Cette page requiert un navigateur Web avec les objets window.* et navigator.* !');
   else if (!(video && canvas)) log('Erreur de contexte HTML !');
   else
   {
-    // log('Demande d’accès au flux vidéo…');
     if (navigator.getUserMedia) navigator.getUserMedia({video:true}, gotStream, noStream);
     else if (navigator.oGetUserMedia) navigator.oGetUserMedia({video:true}, gotStream, noStream);
     else if (navigator.mozGetUserMedia) navigator.mozGetUserMedia({video:true}, gotStream, noStream);

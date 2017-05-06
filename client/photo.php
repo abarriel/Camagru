@@ -1,7 +1,7 @@
 <?
 session_start();
 include('../back/error_account.php');
-if(!$_SESSION['loggued_on_user'])
+if (!$_SESSION['loggued_on_user'])
 	header("Location: ../index.php");
 include('header.php');
 include('../config/database.php');
@@ -9,7 +9,7 @@ include('../config/user.php');
 if ($_GET['ref'])
 {
 	$user = New user(array("picture" => $_GET['ref']));
-	if($val = $user->ifPicture())
+	if ($val = $user->ifPicture())
 	{
 		echo "<script>alert('invalid image you knew it')</script>";
 		exit();
@@ -36,10 +36,11 @@ https://damso.lnk.to/ipseite -->
 		</div>
 	</div>
 		<div id='containcomments'>
-			<p>Comments</p>
+			<!-- <p>Comments</p> -->
 			<!-- It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). -->
 		</div>
 	</div>
 
+	<script type="text/javascript" src="../js/ajax.js"></script>
 	<script type="text/javascript" src="../js/photo.js"></script>
 
