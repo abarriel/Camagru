@@ -11,12 +11,19 @@ document.onreadystatechange = () => {
 			if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 			{	
 				obj = JSON.parse(xhr.responseText);
-				if(obj['likes'] == 0)
+				if (obj['likes'] == 0)
 					emo = "😢";
 				else
 					emo = "😻";
 				info.innerHTML = "posted by "+obj['login']+" 🖕<br/> "+obj['likes']+" likes "+emo+"<br/>👯";
 				info.innerHTML += "<br/>You need to socialize!";
+
+				JSON.parse(obj['comments']).forEach((elm) =>
+				{
+					console.log(elm['comment']);
+				})
+
+				// console.log(typeof obj['comments'])
 			}
 		};
 		img.src = "../data/image/" +window.location.search.slice(5) + ".png";
@@ -47,7 +54,9 @@ var addComment = function(evt) {
 					return;  
 				}
 				response.text().then(function(data) {  
-					console.log(data);  
+					// console.log(data);  
+					// console.log(data[0].usr)
+					// console.log(data.length);
 				});
 			}
 		)  

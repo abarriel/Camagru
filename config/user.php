@@ -24,10 +24,33 @@ class user{
 		$this->date = date('Y-m-d H:i:s');
 		$this->db_con = connect_db();
 	}
-	
-	public function addComment($login){
+
+	public function getComments(){
+		$stmt = $this->db_con->prepare("SELECT comments FROM data WHERE picture=:picture");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture
+			));
+		$data = $stmt->fetch();
+		return $data['comments'];
+	}
+
+	public function addComment($token){
+		$comments = $this->getComments();
+		if (!isset($comments))
+		{
+			$comments[] = $token;
+		}
+		else
+		{
+			$comments = json_decode($comments);
+			$comments[] = $token;
+		}
+		$comments = json_encode($comments);
 		$stmt = $this->db_con->prepare("UPDATE data SET comments=:comments WHERE picture=:picture"); 
-		
+		$val = $stmt->execute(array(
+			"picture" => $this->picture,
+			"comments" => $comments
+			));
 	}
 
 	public function recupAllInfo(){
