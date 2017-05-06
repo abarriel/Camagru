@@ -11,6 +11,7 @@ date_default_timezone_set('CET');
 	<link rel="stylesheet" type="text/css" href="../css/form.css">
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
 	<link rel="stylesheet" type="text/css" href="../css/galerie.css">
+	<link rel="stylesheet" type="text/css" href="../css/photo.css">
 	<link rel="stylesheet" type="text/css" href="../css/webcam.css">
 	<title>Camagru</title>
 </head>
@@ -36,4 +37,5 @@ date_default_timezone_set('CET');
 		?>
 	</header> 
 	<body>
+<script type="text/javascript" src="../js/ajax.js"></script>
 <script type="text/javascript" src="../js/home.js"></script>

@@ -1,3 +1,4 @@
+
 <?
 session_start();
 $path = "../data/image/";

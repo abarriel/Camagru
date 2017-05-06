@@ -6,6 +6,8 @@ header{
 	height: 120px;
 	margin: auto;
 	text-align: center;
+	/*-webkit-animation: coucou .5s ease-out;*/
+	/*-webkit-animation: 1s ease-out 0s 1 slideInFromLeft;*/
 	background-color: white;
 }
 #myalbum{

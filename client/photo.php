@@ -14,15 +14,32 @@ if ($_GET['ref'])
 		echo "<script>alert('invalid image you knew it')</script>";
 		exit();
 	}
-	echo "<img src='http://127.0.0.1:8080/camagru/data/image/".$_GET['ref'].".png'>";
+	// echo "<div id='containerphoto'><div id='containphoto'><img src='http://127.0.0.1:8080/camagru/data/image/".$_GET['ref'].".png'></div></div>";
+	
+}
+else
+{
+	echo "<script>alert('invalid image you knew it')</script>";
+	exit();
 }
 ?>
-<!-- <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=319743485110674";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-share-button" data-href="http://127.0.0.1:8080/camagru/data/image/18602a27dd295b1c9a79f1b9e7a25e7f.png" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8080%2Fcamagru%2Fdata%2Fimage%2F18602a27dd295b1c9a79f1b9e7a25e7f.png&amp;src=sdkpreparse">Share</a></div> -->
+
+<div id='containerphoto'>
+	<div id="allinfo">
+		<div id='containphoto'>
+			<img src=""></img>
+		</div>
+		<div id='containinfo'>
+			<!-- Damso "N. J Respect R" 
+Extrait de son nouvel album "IPSÉITÉ" disponible en streaming et sur iTunes ici :
+https://damso.lnk.to/ipseite -->
+		</div>
+	</div>
+		<div id='containcomments'>
+			<p>Comments</p>
+			<!-- It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). -->
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../js/photo.js"></script>
+
