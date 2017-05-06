@@ -47,9 +47,9 @@ function printCollage(){
 			var newContainer = container.cloneNode(true);
 			newContainer.appendChild(elm);
 			album.appendChild(newContainer);
-	    	newContainer.ondblclick = addLike;
 	    	newContainer.stockParams = element;
-	    	newContainer.onclick = getInfoPicture;
+	    	newContainer.addEventListener('dblclick',addLike);
+	    	newContainer.addEventListener('click',getInfoPicture);
 			// album.appendChild(elm);
 			// console.log(elm);	
 			});
@@ -71,15 +71,18 @@ function addLike()
 	// var params = "addLike=yes&collage=0379113a2b17aef05dd8cf1a32f0aad3";
 	var params = "addLike=yes&collage="+this.childNodes[1].src.slice(-36).slice(0,32);
 	xhr.send(params);
-	const tamere = this;
+	console.log("d");	
 	xhr.onreadystatechange = () => {
 		if(xhr.readyState === 4 && (xhr.status == 200 ))
 			{
 				if (xhr.responseText === "like") 
+					{
 					this.querySelector('img').src = "../data/heart.png";
+					}
 				else  if (xhr.responseText === "unLike")
 					this.querySelector('img').src = "../data/unlike.png";
 					}
+					console.log(this);
 	};
 	this.querySelector('div').style.transition = '1s';
 	this.querySelector('div').style.opacity = '1';
