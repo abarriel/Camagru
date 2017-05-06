@@ -1,4 +1,5 @@
 const img = document.querySelector('img');
+const form = document.getElementById('commentForm');
 const info = document.getElementById('containinfo');
 var xhr = getXMLHttpRequest();
 document.onreadystatechange = () => {
@@ -23,3 +24,17 @@ document.onreadystatechange = () => {
 		img.src = "../data/image/" +window.location.search.slice(5) + ".png";
  		}
  }
+
+var addComment = function(evt) {
+    evt.preventDefault();
+	comment = evt.target[0].value;
+	if (comment === "" || comment.match('/^\s+$/'))
+		{
+		alert('Empty Comment');
+		// return ;
+		}
+	// if(comment)
+    // alert("me and all my relatives are owned by China");
+    // console.log(evt.target[0].value);
+};
+form.addEventListener("submit", addComment, true);
