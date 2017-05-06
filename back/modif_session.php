@@ -24,7 +24,6 @@ if ($_POST['submit'] === 'Enjoy!')
 	}
 	else if (isset($_POST['delete']) && $_POST['delete'] === "1")
 	{
-
 		$manage = New user(array("login" => $_SESSION['loggued_on_user']));
 		$manage->destroyPictures();
 		$user->deleteAccount($_SESSION['loggued_on_user']);

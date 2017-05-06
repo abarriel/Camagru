@@ -33,19 +33,16 @@ else
 			<!-- Damso "N. J Respect R" 
 Extrait de son nouvel album "IPSÉITÉ" disponible en streaming et sur iTunes ici :
 https://damso.lnk.to/ipseite -->
-		</div>
-	</div>
-		<div id='containcomments'>
-			<!-- <p>Comments</p> -->
-			<!-- It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like). -->
-		</div>
-		<iframe name="votar" style="display:none;"></iframe>
-		<!-- <form action="tip.php" method="post" target="votar"> -->
-		<form  method="POST" id="commentForm">
-	     <input name="comment" type="text" id="usermsg" size="100" />
-        <input name="submit" type="submit"  id="submitcomment" value="Send" />
-   		</form>
-	</div>
-	<script type="text/javascript" src="../js/ajax.js"></script>
-	<script type="text/javascript" src="../js/photo.js"></script>
+</div>
+</div>
+<div id='containcomments'>
+	
+</div>
+<form  method="POST" id="commentForm">
+	<input name="comment" type="text" id="usermsg" size="100" />
+	<input name="submit" type="submit"  id="submitcomment" value="Send" />
+</form>
+</div>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/photo.js"></script>
 

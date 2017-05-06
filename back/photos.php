@@ -8,7 +8,7 @@ if($_POST['action'] === "allPublic")
 	$fetch = new user(array());
 	$val = $fetch->getCollage();
 	echo json_encode($val);
-return;
+	return;
 }
 if (!$_SESSION['loggued_on_user'])
 {
@@ -16,7 +16,6 @@ if (!$_SESSION['loggued_on_user'])
 	exit();
 }
 
-// include("header.php");
 if ($_POST['action'] === "all" && $_SESSION['loggued_on_user'])
 {
 	$fetch = new user(array());
@@ -33,10 +32,8 @@ else if ($_POST['action'] === "deletePicture" && $_POST['key'] && $_SESSION['log
 {
 	$fetch = new user(array("picture"=>$_POST['key']));
 	$val = $fetch->deletePicture();
-	// echo "../data/image/".$_POST['key'].".png";
 	if (file_exists("../data/image/".$_POST['key'].".png"))
 		unlink("../data/image/".$_POST['key'].".png");
-	// echo "reussi";
 }
 
 ?>

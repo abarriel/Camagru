@@ -48,7 +48,6 @@ document.onreadystatechange = () => {
 				var spanContainer = newContainer.querySelectorAll('span');
 				spanContainer[0].innerHTML = "💙 "+ value + "🖊 100 ";
 				spanContainer[1].innerHTML = " ❌";
-				// console.log(elm);
 				spanContainer[1].addEventListener('click',deletePicture, elm);
 				spanContainer[1].url = key;
 				newContainer.addEventListener('ondblclick',deletePicture);

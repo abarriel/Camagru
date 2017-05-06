@@ -26,6 +26,6 @@ else if ($_POST['action'] === "addComment" && $_POST['value'])
 	$token = array('usr' => $_SESSION['loggued_on_user'], 'comment' => $_POST['value']);
 	$data = $user->addComment($token);
 	$data = $user->getComments();
-	echo $data;
+	echo $_SESSION['loggued_on_user'];
 }
 ?>
