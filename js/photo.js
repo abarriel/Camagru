@@ -8,11 +8,9 @@ document.onreadystatechange = () => {
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.send("action=all&ref="+window.location.search.slice(5));
 		xhr.onreadystatechange = function() {
-		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
+			if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 			{	
-				// info.innerHTML = xhr.responseText;
 				obj = JSON.parse(xhr.responseText);
-				// console.log(obj['likes'])
 				if(obj['likes'] == 0)
 					emo = "😢";
 				else
@@ -22,19 +20,40 @@ document.onreadystatechange = () => {
 			}
 		};
 		img.src = "../data/image/" +window.location.search.slice(5) + ".png";
- 		}
- }
+	}
+}
 
 var addComment = function(evt) {
-    evt.preventDefault();
+	evt.preventDefault();
 	comment = evt.target[0].value;
-	if (comment === "" || comment.match('/^\s+$/'))
-		{
+	console.log(comment);
+	if (comment === "" || comment.match(/^\s+$/))
+	{
 		alert('Empty Comment');
-		// return ;
-		}
-	// if(comment)
-    // alert("me and all my relatives are owned by China");
-    // console.log(evt.target[0].value);
+		return ;
+	}
+	fetch('../back/getphoto.php',{
+		method: 'post',  
+		credentials: 'include' ,
+		headers: {  
+			"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+		},  
+		body: 'action=addComment&ref='+window.location.search.slice(5)+'&value='+comment
+		})  
+		.then(  
+			function(response) {  
+				if (response.status !== 200) {  
+					console.log('Looks like there was a problem. Status Code: ' +  response.status);  
+					return;  
+				}
+				response.text().then(function(data) {  
+					console.log(data);  
+				});
+			}
+		)  
+		.catch(function(err) {  
+			console.log('Fetch Error :-S', err);  
+		});
 };
+
 form.addEventListener("submit", addComment, true);

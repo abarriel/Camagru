@@ -3,9 +3,9 @@ session_start();
 include("../back/error_account.php");
 include('../config/account.php');
 include('../config/user.php');
-if(!$_SESSION['loggued_on_user'])
+if (!$_SESSION['loggued_on_user'])
 	header("Location: ../index.php");
-if($_POST['action'] === "all" && $_POST['ref'])
+if ($_POST['ref'])
 {
 	$user = new user(array("picture" => $_POST['ref']));
 	if ($val = $user->ifPicture())
@@ -13,7 +13,16 @@ if($_POST['action'] === "all" && $_POST['ref'])
 		echo "Error";
 		exit();
 	}
+}
+else
+	return;
+if($_POST['action'] === "all")
+{
 	$data = $user->RecupAllInfo();
 	echo json_encode($data);
+}
+else if ($_POST['action'] === "addComment" && $_POST['value'])
+{
+	$data = $user->addComment($_SESSION['loggued_on_user']);	
 }
 ?>

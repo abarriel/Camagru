@@ -11,7 +11,7 @@ const button = document.getElementsByClassName('container')[0];
 const back = document.getElementById('back');
 
 const checkMail = ({ target: { value } }) => {
-	if (value === "" || value.match('/^\s+$/'))
+	if (value === "" || value.match(/^\s+$/))
 		email.style.backgroundColor = "white";
 	else if (!value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/))
 		email.style.backgroundColor = "#e74c3c";
@@ -20,7 +20,7 @@ const checkMail = ({ target: { value } }) => {
 }
 
 const checkName = ({ target: { value } }) => {
-	if (value === "" || value.match('/^\s+$/'))
+	if (value === "" || value.match(/^\s+$/))
 		login.style.backgroundColor = "white";
 	else if (!value.match(/^\w{3,25}$/))
 		login.style.backgroundColor = "#e74c3c";

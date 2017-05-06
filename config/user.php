@@ -24,6 +24,9 @@ class user{
 		$this->date = date('Y-m-d H:i:s');
 		$this->db_con = connect_db();
 	}
+	public function addComment(){
+		
+	}
 	public function recupAllInfo(){
 		$stmt = $this->db_con->prepare("SELECT login,comments,likes,liker FROM data WHERE picture=:picture");
 		$val = $stmt->execute(array("picture" => $this->picture));
