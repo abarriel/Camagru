@@ -34,6 +34,15 @@ class user{
 		return $data['comments'];
 	}
 
+	public function getLogin(){
+		$stmt = $this->db_con->prepare("SELECT login FROM data WHERE picture=:picture");
+		$val = $stmt->execute(array(
+			"picture" => $this->picture
+			));
+		$data = $stmt->fetch();
+		return $data['login'];
+	}
+
 	public function addComment($token){
 		$comments = $this->getComments();
 		if (!isset($comments))
@@ -51,13 +60,32 @@ class user{
 			"picture" => $this->picture,
 			"comments" => $comments
 			));
+
+	}
+
+	public function sendMailComments($commenter, $comments)
+	{
+		$login = $this->getLogin();
+		$stmt = $this->db_con->prepare("SELECT email FROM user_db WHERE login=:login");
+		$stmt->execute(array(
+			"login" => $login
+			));
+		$fetched = $stmt->fetch(PDO::FETCH_ASSOC);
+		$sujet = "Hello ! Someone comment your picture - Camagru" ;
+		$entete = "From: no_reply@camagru.com" ;
+		$message = 'Hello '.$login.'
+
+		Camagruer named '.$commenter.' said: '.$comments.'
+		Go find out which picture! Go check on http://localhost:8080/camagru/!
+		---------------
+		Ceci est un mail automatique, Merci de ne pas y répondre.';
+		mail($fetched['email'], $sujet, $message, $entete) ;
 	}
 
 	public function recupAllInfo(){
 		$stmt = $this->db_con->prepare("SELECT login,comments,likes,liker FROM data WHERE picture=:picture");
 		$val = $stmt->execute(array("picture" => $this->picture));
 		$data = $stmt->fetch(PDO::FETCH_ASSOC);
-		// $data = $stmt->fetch();
 		return $data;
 	}
 

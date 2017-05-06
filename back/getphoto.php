@@ -24,8 +24,9 @@ if ($_POST['action'] === "all")
 else if ($_POST['action'] === "addComment" && $_POST['value'])
 {
 	$token = array('usr' => $_SESSION['loggued_on_user'], 'comment' => $_POST['value']);
-	$data = $user->addComment($token);
-	$data = $user->getComments();
+	$user->addComment($token);
+	$user->getComments();
+	$data = $user->sendMailComments($_SESSION['loggued_on_user'],$_POST['value']);
 	echo $_SESSION['loggued_on_user'];
 }
 ?>
