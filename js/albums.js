@@ -31,7 +31,6 @@ document.onreadystatechange = () => {
 }
 
 function getInfoPicture(){
-	console.log(this.stockParams);
 	window.location = '../client/photo.php?ref='+this.stockParams;
 }
 
@@ -40,7 +39,6 @@ function printCollage(){
 	xhr.open("POST", "../back/photos.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.send("action=all");
-	// console.log("printCollage");
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 		{	
@@ -57,7 +55,6 @@ function printCollage(){
 			});
 		}
 	};
-	// console.log("Genre");
 }
 
 function manageClick(){
@@ -75,18 +72,15 @@ function manageClick(){
 }
 
 function addLike(){
-	console.log(this);
 	var like2Unlike = 0; 
 	var xhr = getXMLHttpRequest();
 	xhr.open("POST", "../back/save_collage.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	var params = "addLike=yes&collage="+this.childNodes[1].src.slice(-36).slice(0,32);
 	xhr.send(params);
-	console.log(params);
 	xhr.onreadystatechange = () => {
 		if(xhr.readyState === 4 && (xhr.status == 200 ))
 			{
-				console.log(xhr.responseText);
 				if (xhr.responseText === "like") 
 					this.querySelector('img').src = "../data/heart.png";
 				else  if (xhr.responseText === "unLike")

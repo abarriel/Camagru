@@ -9,7 +9,6 @@ function saveCollage(){
 	params = 
 	"getCollage=yes";
 	xhr.send(params);
-	console.log("SaveCollage");
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && xhr.status === 200) 
 		{
@@ -23,11 +22,7 @@ function saveCollage(){
 function addCollage(path){
 	elm = document.createElement("img");
 	elm.src = path;
-	// console.log("s");
 	galerie.appendChild(elm);
-	// galerie.insertbefore(elm, galerie);
-	// insertbefore	
-	
 }
 
 function printCollage(){
@@ -35,7 +30,6 @@ function printCollage(){
 	xhr.open("POST", "../back/photos.php", true);
 	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xhr.send("action=all");
-	console.log("printCollage");
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 		{	

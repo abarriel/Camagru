@@ -17,7 +17,3 @@ function getXMLHttpRequest() {
 	}
 	return xhr;
 }
-// var xhr = getXMLHttpRequest();
-// xhr.open("POST", "index.php", true);
-// xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-// xhr.send(null);

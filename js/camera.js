@@ -75,10 +75,8 @@ function snapshot()
       ctx = canvas.getContext('2d');
       imageObj1.src = xhr.responseText;
       ctx.drawImage(imageObj1,0,0);
-      // console.log(xhr.responseText);
     }
   };
-  console.log(viewUpload.src);
   xhr.open("POST", "../back/image.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   params = "datawebcam="+ encodeURIComponent(data) +
@@ -121,7 +119,6 @@ function stop()
     video.src = "";
   }
   myButton = document.getElementById('buttonStart');
-  // if (on_elm)
   on_elm.style.display = "none";
   if (myButton) myButton.disabled = false;
 }
@@ -131,25 +128,23 @@ function gotStream(stream)
   save.style.display = "none";
   video.style.display = "block";
   hideUpload.style.display = "none";
-  // canvas.style.visibility = "hidden";
   var myButton = document.getElementById('buttonStart');
   if (myButton) myButton.disabled = true;
   videoStream = stream;
 
   video.onerror = function ()
   {
-    // log('video.onerror');
     if (video) stop();
   };
   stream.onended = noStream;
   if (window.URL) video.src = window.URL.createObjectURL(stream);
   else if (video.mozSrcObject !== undefined)
-  {//FF18a
+  {
     video.mozSrcObject = stream;
     video.play();
   }
   else if (navigator.mozGetUserMedia)
-  {//FF16a, 17a
+  {
     video.src = stream;
     video.play();
   }
@@ -178,4 +173,7 @@ function start()
   }
 }
 start();
+document.getElementById('footer').addEventListener('click',function(){
+  this.style.display = "none";
+});
 document.getElementById('buttonSnap').addEventListener('click',snapshot);

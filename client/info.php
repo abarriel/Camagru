@@ -9,7 +9,6 @@ echo $_SESSION['loggued_on_user'];
 echo "<br/>";
 $user = New user(array("login" => $_SESSION['loggued_on_user']));
 $data = $user->getAllInfo();
-// print_r($data);
 if ($data['picture'] == 0)
 	return ;
 echo $data['picture']. " publications ";

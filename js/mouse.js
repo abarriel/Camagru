@@ -1,4 +1,3 @@
-
 var mousePosition;
 var offset = [0,0];
 var div;

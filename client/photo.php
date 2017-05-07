@@ -14,8 +14,6 @@ if ($_GET['ref'])
 		echo "<script>alert('invalid image you knew it')</script>";
 		exit();
 	}
-	// echo "<div id='containerphoto'><div id='containphoto'><img src='http://127.0.0.1:8080/camagru/data/image/".$_GET['ref'].".png'></div></div>";
-	
 }
 else
 {
@@ -30,18 +28,15 @@ else
 			<img src=""></img>
 		</div>
 		<div id='containinfo'>
-			<!-- Damso "N. J Respect R" 
-Extrait de son nouvel album "IPSÉITÉ" disponible en streaming et sur iTunes ici :
-https://damso.lnk.to/ipseite -->
-</div>
-</div>
-<div id='containcomments'>
-	
-</div>
-<form  method="POST" id="commentForm">
-	<input name="comment" type="text" id="usermsg" size="100" />
-	<input name="submit" type="submit"  id="submitcomment" value="Send" />
-</form>
+		</div>
+	</div>
+	<div id='containcomments'>
+		
+	</div>
+	<form  method="POST" id="commentForm">
+		<input name="comment" type="text" id="usermsg" size="100" />
+		<input name="submit" type="submit"  id="submitcomment" value="Send" />
+	</form>
 </div>
 <script type="text/javascript" src="../js/ajax.js"></script>
 <script type="text/javascript" src="../js/photo.js"></script>

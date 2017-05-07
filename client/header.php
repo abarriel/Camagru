@@ -1,7 +1,6 @@
 <?php
 session_start();
 date_default_timezone_set('CET');
-// include('class.php');
 ?>
 <head>
 	<meta charset="utf-8">

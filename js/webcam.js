@@ -9,7 +9,6 @@ var imgY = 350;
 
 function	addFilter(index)
 {
-
 	document.getElementById('buttonSnap').disabled = false;
 	on_elm.style.background = "url(../data/"+index+".png";
 	on_elm.style.display = "block";
@@ -41,7 +40,6 @@ document.onreadystatechange = () => {
 
 const checkImage = (file, cb) => {
 	const img = new Image();
-
 	const _URL = window.URL || window.webkitURL;
 
 	img.onload = () => {
@@ -51,7 +49,6 @@ const checkImage = (file, cb) => {
 	img.onerror = () => {
 		alert("Wrong Type!");
 	}
-	console.log(file);
 	if(file)
 	img.src = _URL.createObjectURL(file);
 }
@@ -80,7 +77,6 @@ const loadImage = (file) => {
 }
 
 function uploadFile(evt){
-
 	var tgt = evt.target || window.event.srcElement,
 	files = tgt.files;
 	checkImage(files[0], loadImage);

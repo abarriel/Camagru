@@ -17,7 +17,6 @@ include('back/error_account.php');
   <link rel="stylesheet" type="text/css" href="css/album.css">
   <link rel="stylesheet" type="text/css" href="css/form.css">
   <title>Camagru</title>
-	<!-- <script type="text/javascript" src="js/facebook_register.js"></script> -->
 </head>
 <body>
 
@@ -43,7 +42,6 @@ include('back/error_account.php');
 		</form>
 		<form class="form_index" id="login-form" method="POST" action="back/session.php">
 		<p>Login</p>
-				<!-- <input class="inpu" type="email" name="email" id="email" placeholder="Type your E-mail address" required></input><br /> -->
 				<input class="inpu" type="text" name="login" id="login" placeholder="Type your login here" required></input><br />
 				<input class="inpu" type="password" name="passwd" id="passwd" placeholder="Type your Password" required></input><br />
 				<input  type="submit" name="submit" value="Login!" id="submit"  class="button"/>
@@ -65,10 +63,6 @@ include('back/error_account.php');
 			<div id="errorContainer"></div>
 		</form>
 				<div id="back"><button class="button" onclick="visibility_div_register()">Back</button></div></div>
-	
-<?php
-// include('client/footer.php');
-?>
 <div id="album" style="height: 1000px"></div>
 </body>
 

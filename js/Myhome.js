@@ -33,11 +33,9 @@ document.onreadystatechange = () => {
 		xhr.open("POST", "../back/photos.php", true);
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		xhr.send("action=myself");
-		console.log("printCollage");
 		xhr.onreadystatechange = function() {
 			if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 				{	
-				console.log(xhr.responseText);
 				if (xhr.responseText === "null")
 					return;
 				Object.entries(JSON.parse(xhr.responseText)).forEach(([key, value]) => {
@@ -68,8 +66,6 @@ function deletePicture(evt){
 	xhr.onreadystatechange = () => {
 		if (xhr.readyState === 4 && (xhr.status == 200 || xhr.status == 0))
 		{	
-			console.log(xhr.response);
-			console.log(this);
 			window.location.reload();
 		}
 	};

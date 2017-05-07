@@ -46,8 +46,6 @@ function addTokens(usr,comment){
 var addComment = function(evt) {
 	evt.preventDefault();
 	comment = evt.target[0].value;
-
-	console.log(comment);
 	if (comment === "" || comment.match(/^\s+$/))
 		{
 			alert('Empty Comment');

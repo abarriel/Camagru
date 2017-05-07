@@ -61,7 +61,6 @@ album.addEventListener('scroll', function (event) {
     // console.log("" + album.style.height + " : " + album.scrollTop + " : " +album.scrollHeight +" : "+ window.innerHeight );
     if ((parseInt(album.style.height) + album.scrollTop) >= album.scrollHeight)
         {
-            // console.log("ok");
             newCollages.slice(imgCount,imgCount + 3).forEach(function(element, index){
                 elm = document.createElement("img");
                 elm.src = "data/image/"+element+".png";  

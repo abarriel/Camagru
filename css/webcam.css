@@ -51,7 +51,6 @@
 @media only screen and (max-device-width : 768px) {
     .galerie{
     	display:none;
-    	/*left: 100px;*/
     }
     #filter{
     	top:1200px;

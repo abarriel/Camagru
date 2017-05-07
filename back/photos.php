@@ -10,6 +10,7 @@ if($_POST['action'] === "allPublic")
 	echo json_encode($val);
 	return;
 }
+
 if (!$_SESSION['loggued_on_user'])
 {
 	header("Location: ../index.php");
