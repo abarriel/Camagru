@@ -21,15 +21,17 @@ else
 	exit();
 }
 ?>
-
 <div id='containerphoto'>
 	<div id="allinfo">
 		<div id='containphoto'>
 			<img src=""></img>
 		</div>
 		<div id='containinfo'>
+
 		</div>
 	</div>
+	<div id="fb-root"></div>
+	<div class="fb-share-button" id="fb_share" data-href="" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="">Share</a></div>
 	<div id='containcomments'>
 		
 	</div>

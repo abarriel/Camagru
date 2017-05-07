@@ -27,6 +27,5 @@ echo '<div class="container_home" value="button" id="button_container"> <input t
 	
 </div>
 <script type="text/javascript" src="../js/Myhome.js"></script>
-<script type="text/javascript" src="../js/infome.js"></script>
 <script type="text/javascript" src="../js/ajax.js"></script>
 </body>

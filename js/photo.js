@@ -1,7 +1,16 @@
 const img = document.querySelector('img');
 const form = document.getElementById('commentForm');
+const fb_share = document.getElementById('fb_share');
 const info = document.getElementById('containinfo');
 const containcomments = document.getElementById('containcomments');
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=319743485110674";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 document.onreadystatechange = () => {
 	if (document.readyState === "complete"){
@@ -25,6 +34,11 @@ document.onreadystatechange = () => {
 								{
 									addTokens(elm['usr'],elm['comment']);				
 								})
+							// console.log(window.location);
+						// console.log(fb_share.getAttribute('data-href'));
+						fb_share.setAttribute("data-href",window.location.href);
+
+						// fb_share.setAttribute("fb-iframe-plugin-query", "app_id=319743485110674&container_width=1273&href=http%3A%2F%2Flocalhost%3A8080%2Fcamagru%2Fclient%2Ftest&layout=button_count&locale=fr_FR&mobile_iframe=true&sdk=joey&size=small");
 			}
 		};
 		img.src = "../data/image/" +window.location.search.slice(5) + ".png";
@@ -77,3 +91,30 @@ var addComment = function(evt) {
 	};
 
 	form.addEventListener("submit", addComment, true);
+
+function uploadFile(){
+		fetch('../config/upload.class.php',{
+			method: 'post',  
+			credentials: 'include' ,
+			headers: {  
+				"Content-type": "application/x-www-form-urlencoded; charset=UTF-8"  
+			},  
+			body: 'key=232323&upload=yes&ref='+window.location.search.slice(5)
+		})  
+		.then(  
+			function(response) {  
+				if (response.status !== 200) {  
+					console.log('Looks like there was a problem. Status Code: ' +  response.status);  
+					return;  
+				}
+				response.text().then(function(data) {  
+					console.log(data);
+						
+				});
+				form.reset();
+			}
+			)  
+		.catch(function(err) {  
+			console.log('Fetch Error :-S', err);  
+		});
+}
