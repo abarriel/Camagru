@@ -9,36 +9,6 @@ function log(text)
   if (preLog) preLog.textContent += ('\n' + text);
   else alert(text);
 }
-// function snapshot()
-// {
-//   canvas.style.display = "block";
-//   canvas.width = video.videoWidth;
-//   canvas.height = video.videoHeight;
-//   var ctx = canvas.getContext('2d');
-//   var imageObj1 = new Image();
-//   if (viewUpload.src.length > 100)
-//   {
-//     imageObj1.src = viewUpload.src;
-//     ctx.drawImage(imageObj1, 0, 0);
-//   }
-//   else
-//     ctx.drawImage(video, 0, 0);
-//   console.log(viewUpload.src);
-//   var imageObj2 = new Image();
-//   var data = canvas.toDataURL('image/png');
-//   imageObj1.src = data;
-//   if (on_elm.style.display !== "none")
-//   {
-//     imageObj2.src = on_elm.style.backgroundImage.slice(5, -2);
-//     ctx.drawImage(imageObj2, imgX - 680, imgY - 250, 320, 240);
-//   }
-//   console.log(canvas.toDataURL('image/png'));
-//   on_elm.style.left = "-9999px";
-//   save.style.display = "block";
-// }
-
-// $webcam = imagecreatefromstring(base64_decode($base64));
-// $filtre = imagecreatefrompng($json->data[0]->filtre);
 
 function snapshot()
 {
